@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h1>Login</h1>
+            <form action="">
+                <div class="input-group">
+                    <input type="text" class="email" placeholder="Email" pattern="[A-Za-z0-9]+@[a-z]+\.[a-z]{2,3}">
+                    <small class="small">Your Email Format is not valid</small>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Password">
+                </div>
+                <div class="input-group">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+        <div class="img">
+            <img src="1 (1).jpg" width="100%" alt="">
+            <img src="1 (2).jpg" width="100%" alt="">
+        </div>
+    </div>
+
+    <script>
+        // intaliz a varable for imgs
+        let img = document.querySelectorAll('.img img')
+        // create a counter for slider
+        let counter = 1;
+
+        // a function for slider
+        function slide(){
+            // loop the img variable
+            for(let i = 0; i<img.length;i++){
+            // make zero the opacity of imgs 
+             img[i].style.opacity = 0
+            }
+            //If the counter is less than image lenght, the counter should be equal to one.
+            if(counter > img.length) counter = 1
+    
+            //Make the Opacity of an image to One.
+            img[counter-1].style.opacity = '1'
+        }
+           // Set an Interval to call a function after each four minute and increment the counter's Value.
+        setInterval(() => {
+            slide()
+            counter++
+        }, 4000);
+
+    </script>
+</body>
+</html>
